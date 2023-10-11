@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block main %}
+    <h1>
+    Главная страница
+    </h1>
+    <ol>
+        {% for movie in movies %}
+        <li>
+            <h2>{{ movie.name }}</h2>
+            <p>Описание: {{ movie.description }}</p>
+            <p>Год выхода: {{ movie.year }}</p>
+            <p>Жанр: {{ movie.genre }}</p>
+            <p>Рейтинг: {{ movie.rating }}</p>
+            <a href="{% url 'movies:movie_detail' movie.id %}">Подробнее</a>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
