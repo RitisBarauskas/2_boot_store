@@ -31,6 +31,14 @@ MOVIES = [
         'rating': 9.2,
         'genre': 'crime',
     },
+    {
+        'id': 5,
+        'name': 'Начало',
+        'description': 'Some description',
+        'year': 2010,
+        'rating': 8.8,
+        'genre': 'action',
+    }
 ]
 
 DATABASE = {

@@ -6,7 +6,7 @@ from .constants import DATABASE, DEFAULT_COUNT_MOVIES_ON_PAGE
 
 def index(request):
     movies = DATABASE.get('movies', [])
-    movies = sorted(movies, key=lambda movie: movie.get('rating', 0), reverse=True)[:DEFAULT_COUNT_MOVIES_ON_PAGE]
+    movies = sorted(movies, key=lambda movie: movie.get('year', 0), reverse=True)[:DEFAULT_COUNT_MOVIES_ON_PAGE]
 
     return render(request, 'index.html', {'movies': movies})
 
