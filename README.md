@@ -35,4 +35,4 @@ python manage.py runserver
 * Django 4.2
 
 ## Author
-[Ritis Barauskas](github.com/ritisbarauskas)
+[Ritis Barauskas](https://github.com/ritisbarauskas)
