@@ -1,0 +1,11 @@
+
+<p>Описание: {{ movie.description }}</p>
+<p>Год выхода: {{ movie.year }} (всего вышло фильмов в этом году: {{ movie.year_count }})</p>
+<p>Категории ({{ movie.category_count }}): </p>
+<ul>
+    {% for mc in movie.movie_categories.all %}
+        <li>{{ mc.category.name }}</li>
+    {% endfor %}
+</ul>
+<p>Модератор: {{ movie.creator.get_full_name }}</p>
+<p style="{% if movie.rating > 9 %}color:#FF0000{% else %}color:#0000FF{% endif %}">Рейтинг: {{ movie.rating }}</p>
