@@ -11,11 +11,8 @@
         {% for movie in movies %}
         <li>
 
-            <h2>{{ movie.name }}</h2>
-            <p>Описание: {{ movie.description }}</p>
-            <p>Год выхода: {{ movie.year }}</p>
-            <p>Жанр: {{ movie.genre }}</p>
-            <p style="{% if movie.rating > 9 %}color:#FF0000{% else %}color:#0000FF{% endif %}">Рейтинг: {{ movie.rating }}</p>
+            <h2>{{ movie.title }}</h2>
+            {% include 'movies/includes/movie_card.html' %}
             <a href="{% url 'movies:movie_detail' movie.id %}">Подробнее</a>
         </li>
         {% endfor %}

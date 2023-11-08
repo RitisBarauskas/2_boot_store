@@ -54,7 +54,7 @@ class Movie(TimeStampMixin, Model):
     year = PositiveSmallIntegerField(verbose_name='Год', validators=[
         MinValueValidator(MIN_CREATED_MOVIE_YEAR), MaxValueValidator(MAX_CREATED_MOVIE_YEAR)
     ])
-    category = ManyToManyField(Category, through='MovieCategory', related_name='movies', verbose_name='Категория')
+    categories = ManyToManyField(Category, through='MovieCategory', related_name='movies', verbose_name='Категория')
     creator = ForeignKey(UserModel, on_delete=CASCADE, related_name='movies', verbose_name='Кто добавил фильм в базу')
 
     class Meta:
