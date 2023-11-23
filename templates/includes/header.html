@@ -1,3 +1,10 @@
 <header>
     <a href="{% url 'movies:index' %}">Главная</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'movies:movie_create' %}">Добавить фильм</a>
+        <a href="{% url 'movies:category_create' %}">Добавить категорию</a>
+        <a href="{% url 'logout' %}">Выйти</a>
+    {% else %}
+        <a href="{% url 'login' %}">Войти</a>
+    {% endif %}
 </header>
